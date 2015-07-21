@@ -1,4 +1,7 @@
 var Twitter = require('twitter');
+var express = require('express');
+var app = express();
+
 
 var client = new Twitter({
   consumer_key: 'mtEsDDynLBPI0bk0QvOjvn39n',
@@ -42,6 +45,10 @@ client.stream('statuses/filter', {track: 'maortoubianibm'},  function(stream){
 		return msgArray[randomNumber];
  }
 
+
+
+app.listen(process.env.PORT || 3000);
+console.log("web service is listening on port 3000");
 
 
 
